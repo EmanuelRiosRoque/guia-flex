@@ -1,0 +1,225 @@
+:root {
+    --azul: #013e64;
+    --blanco: #FFF;
+    --naranja: #ff4f1e;
+}
+html {
+    font-size: 62.5%; /** 1REM = 10pX **/
+    box-sizing: border-box;
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+  
+
+body {
+    background-color: var(--azul);
+    font-family:  'Lato', sans-serif;
+    font-size: 1.6rem;
+}
+
+h1, h2 {
+    color: var(--blanco);
+    text-align: center;
+    margin: 5rem 0;
+    padding: 1rem;
+}
+.caja-curso {
+    background-color: var(--naranja);
+    text-align: center;
+    color: var(--blanco);
+    padding: 5rem;
+
+}
+.caja-curso h1 {
+    margin: 0;
+}
+.caja-curso p {
+    font-size: 2.4rem;
+}
+.caja-curso a {
+    font-size: 2.4rem;
+    padding: 2rem;
+    display: inline-block;
+    text-decoration: none;
+    color: var(--blanco);
+    padding: 0;
+}
+
+
+.contenedor {
+    max-width: 120rem;
+    margin: 0 auto;
+}
+.box {
+    background-color: var(--naranja);
+    color: var(--blanco);
+    padding: 5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+    border: 1rem solid #bb2b03;
+}
+
+.contenedor > div {
+    background-color: var(--blanco);
+    padding: 5rem;
+}
+
+/** 1.- Display Flex **/
+/** Todo aquello que este con "display: flex;" se mostraran de izquierda a derecha **/
+
+.d-flex {
+    display: flex;
+}
+
+
+
+/** 2.- Flex direction **/
+/** Para ocupar flex direction es necesario primerio declarar display flex **/
+.d-flex-2 {
+    display: flex;
+    flex-direction: row-reverse;
+}
+
+/** 3.- justify-content - row **/
+/** Sirve para alinear horizontalmente **/
+.d-flex-3 {
+    display: flex;
+    justify-content: space-between;
+}
+
+/** 4.- justify-content - column **/
+.d-flex-4 {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    height: 1000px;
+}
+
+
+/** 5.- align-items - row **/
+/** Sirve para alinear verticalmente **/
+.d-flex-5 {
+    display: flex;
+    align-items: flex-end;
+    height: 700px;
+}
+
+/** 6.- align-items - column **/
+.d-flex-6 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+/** 7.- align-items y justify-content **/
+.d-flex-7 {
+    display: flex;
+    height: 800px;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+/** 8.- Flex Basis **/
+.d-flex-8 {
+    display: flex;
+}
+.d-flex-8 .box {
+    flex-basis: 33.33%;
+}
+
+
+/** 8.- Galp y Calc **/
+.d-flex-9 {
+    display: flex;
+    /* gap: 2rem; */
+    justify-content: space-between;
+
+}
+.d-flex-9 .box {
+    flex-basis: calc(33.3% - 1rem);
+}
+
+
+/* 
+.d-flex-9 {
+    display: flex;
+    justify-content: space-between;
+
+}
+.d-flex-9 .box:nth-child(1) {
+    flex-basis: calc(50% - 1rem);
+}
+
+.d-flex-9 .box:nth-child(2),
+.d-flex-9 .box:nth-child(3) {
+    flex-basis: calc(25% - 1rem);
+} */
+
+
+/** 8.- Flex Wrap **/
+.d-flex-10 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.d-flex-10 .box {
+    flex-basis: calc(33.3% - 1rem);
+}
+
+/** Flex Grow **/
+
+.d-flex-11 {
+    display: flex;
+}
+
+/*! flex grow sepra equitativamente nuestro contenido en display flex asignadole 1px hasta que se vea "igual" al momento de darle flex grow nuestro contenido esta en dafault : 0 y por ello al nosotros colocar diplay flex solo se neos conpacta en un lado. Y no se reparte equitativamente */
+/* .d-flex-11 .box {
+    flex-grow: 1;
+} */
+
+/** El verdadero poder de flex grow es: Cuando lo mesclas en dif elementos Ej:**/
+.d-flex-11 .box:nth-child(1){
+    flex-grow: 2;
+}
+.d-flex-11 .box:nth-child(2){
+    flex-grow: 1;
+}
+.d-flex-11 .box:nth-child(3){
+    flex-grow: 1;
+}
+
+/** 12.- Flex Shrink -- Factor de Contraccion**/
+.d-flex-12 {
+    display: flex;
+}
+
+.d-flex-12 .box {
+    flex-grow: 1;
+    flex-basis: 300px;
+}
+
+.d-flex-12 .box:nth-child(3) {
+    flex-shrink: 2;
+}
+
+/** 13.- Flex Shorthand **/
+.d-flex-13 {
+    display: flex;
+    justify-content: space-between;
+}
+
+.d-flex-13 .box {
+    /* flex-grow: 1; 
+    flex-shrink: 1;
+    flex-basis: 33.33%; */
+    /*! 3 columnas con el mismo espacio*/
+    /* flex: 1 0 33.3%; */
+    /*! 3 columnas con espacios*/
+    flex: 0 0 calc(33.3% - 1rem);
+
+}
